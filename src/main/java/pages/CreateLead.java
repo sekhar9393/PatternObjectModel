@@ -14,7 +14,7 @@ public class CreateLead extends ProjectMethods{
 	public CreateLead() {		
 		PageFactory.initElements(driver,this);
 
-	System.out.println("Test");
+	System.out.println("Test1");
 	}	
 
 /*	@FindBy(how= How.LINK_TEXT,using="Create Lead")
