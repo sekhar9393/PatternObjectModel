@@ -13,6 +13,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.util.SystemOutLogger;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.InvalidElementStateException;
 import org.openqa.selenium.NoAlertPresentException;
@@ -46,7 +47,9 @@ public class SeMethods extends Reporter implements WdMethods{
 			prop.load(new FileInputStream(new File("./src/main/resources/config.properties")));
 			sHubUrl = prop.getProperty("HUB");
 			sHubPort = prop.getProperty("PORT");
-			sUrl = prop.getProperty("URL");
+		//Soucre for URL
+			
+		sUrl = prop.getProperty("URL1");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -156,6 +159,21 @@ public class SeMethods extends Reporter implements WdMethods{
 		String bReturn = "";
 		try {
 			bReturn = ele.getText();
+		} catch (WebDriverException e) {
+			reportStep("The element: "+ele+" could not be found.", "FAIL");
+		}
+		return bReturn;
+	}
+
+
+	public String getTexts(List<WebElement> ele) {	
+		String bReturn = "";
+		try {
+			for (WebElement eachWebElements : ele) {
+				bReturn = eachWebElements.getText();
+				System.out.println(bReturn);
+			}
+
 		} catch (WebDriverException e) {
 			reportStep("The element: "+ele+" could not be found.", "FAIL");
 		}
