@@ -27,6 +27,13 @@ public class TC_Myntra extends ProjectMethods{
 		.ClickSearchBox()
 		.FindSunglassesCount()
 		.getNamesOfSunGlasses()
+		.ClickGreenColour()
+		.ClickSecondItem()
+		.getPriceOfItem()
+		.clickAddButton()
+		.clickgoToCart()
+		.getPriceOfCartItem()
+		.verifyCartValue()	
 		
 		
 		;			
