@@ -1,4 +1,4 @@
-package testcases;
+	package testcases;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
@@ -17,7 +17,7 @@ public class TC_Myntra extends ProjectMethods{
 		category="Smoke";
 		authors="Sekhar";
 		browserName="chrome";
-		dataSheetName="Myntra";
+		dataSheetName="Myntra"; 
 	}
 	@Test(dataProvider="fetchData")
 	public void loginAndLogout(String product) {
